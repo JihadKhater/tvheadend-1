@@ -186,11 +186,11 @@ page_about(http_connection_t *hc, const char *remain, void *opaque)
   const char *lang = hc->hc_access->aa_lang_ui;
 
   htsbuf_qprintf(hq, "<center class=\"about-tab\">\n\
-<div class=\"about-title\">HTS Tvheadend %s</div>\n\
-<p>&copy; 2006 - 2021 Andreas Öman, Jaroslav Kysela, Adam Sutton, et al.</p>\n\
+<div class=\"about-title\">RayaTech-IPTV %s</div>\n\
+<p>&copy; 2020 - 2030 </p>\n\
 <p><img class=\"logobig\" src=\"static/img/logobig.png\"></p>\n\
-<p><a href=\"https://tvheadend.org\">https://tvheadend.org</a></p>\n",
-    tvheadend_version);
+<p><a href=\"https://rayame.net\">https://rayame.net</a></p>\n",
+    );
 
   htsbuf_qprintf(hq, "<p>%s \n\
 <a target=\"_blank\" href=\"http://www.extjs.com/\">ExtJS</a>. \
@@ -206,7 +206,7 @@ FamFamFam</a>, "\
 
   htsbuf_qprintf(hq, "<p>%s: %s (%s)",
     tvh_gettext_lang(lang, N_("Build")),
-    tvheadend_version,
+  
     build_timestamp);
   if (!http_access_verify(hc, ACCESS_ADMIN)) {
     htsbuf_qprintf(hq,
@@ -220,17 +220,7 @@ FamFamFam</a>, "\
     htsbuf_qprintf(hq, "</p>\n");
   }
 
-  htsbuf_qprintf(hq, "<p>\n\
-%s<br/>\n\
-%s\n\
-</p>\n\
-<a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3Z87UEHP3WZK2'><img src='https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif' alt='' /></a>\n\
-</center>\n",
-   tvh_gettext_lang(lang, N_("If you'd like to support the project, please consider a donation.")),
-   tvh_gettext_lang(lang, N_("All proceeds are used to support server infrastructure and buy test equipment.")));
-
-  http_output_html(hc);
-  return 0;
+ 
 }
 
 /**
